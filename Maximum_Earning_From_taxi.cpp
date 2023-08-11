@@ -27,7 +27,11 @@ int find(vector<vector<int>>&events,int start,int toFind)
     {
         if(curr>=rides.size())return 0;
         if(dp[curr]!=-1)return dp[curr];
+
+        // ------------------O(log(n))--------------------
         int i=find(rides,curr+1,rides[curr][1]);
+
+        // ----------------O(n)-------------------
         // for(i=curr+1;i<n;i++)
         // {
         //     if(rides[i][0]>=rides[curr][1])
